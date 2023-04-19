@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::factory()->has(
+        User::factory()->count(10)->has(
             Order::factory()->count(3)->hasAttached(
                 Product::factory()->count(5), ['total_price' => rand(100, 500), 'total_quantity' => rand(1, 3)]
             )
